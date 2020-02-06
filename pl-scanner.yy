@@ -24,6 +24,7 @@ YY_DECL;
 
 DIGIT [0-9] 
 ALPHA [a-zA-Z]
+ID [a-z][a-zA-z0-9]
 
 %%
 
@@ -55,6 +56,10 @@ ALPHA [a-zA-Z]
 
 {ALPHA}+        { 
 			return T_ID;
+		}
+
+{ID}		{
+			return OP_ASSIGN;
 		}
 
 "+"		{
