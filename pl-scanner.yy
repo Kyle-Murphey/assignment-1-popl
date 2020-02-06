@@ -25,6 +25,7 @@ YY_DECL;
 DIGIT [0-9] 
 ALPHA [a-zA-Z]
 ID [a-z][0-9][A-Z]
+TESTCAP [A-Z][A-Z0-9]
 
 %%
 
@@ -60,6 +61,11 @@ ID [a-z][0-9][A-Z]
 
 {ID}		{
 			return OP_ASSIGN;
+		}
+
+{TESTCAP}
+		{
+			return 'k'
 		}
 
 "+"		{
