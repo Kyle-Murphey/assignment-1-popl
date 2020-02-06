@@ -37,29 +37,68 @@ ALPHA [a-zA-Z]
 
 
 
-";"							  { 
-										return ';'; 
-                  }
+";"		{ 
+			return ';'; 
+                }
 
-"="							  { 
-										return '='; 
-                  }
+"="		{ 
+			return '='; 
+                }
 
-"main"					{ 
-										return K_MAIN; 
-                  }
+"main"		{ 
+			return K_MAIN; 
+                }
 
-
-{DIGIT}+					{ 
-										return L_INTEGER;
-									}
+{DIGIT}+	{ 
+			return L_INTEGER;
+		}
 
 {ALPHA}+        { 
-									return T_ID;
-							  }
+			return T_ID;
+		}
 
-<<EOF>>						{ return T_EOF ; }
-.									{ printf ("Unexpected character\n"); exit (1); }
+"+"		{
+			return OP_ADD;
+		}
+
+"-"		{
+			return OP_SUB;
+		}
+
+"*"		{
+			return OP_MUL;
+		}
+
+"/"		{
+			return OP_DIV;
+		}
+
+"<="		{
+			return OP_LEQ;
+		}
+
+">="		{
+			return OP_GEQ;
+		}
+
+"=="		{
+			return OP_EQ;
+		}
+
+"!="		{
+			return OP_INEQ;
+		}
+
+"<"		{
+			return OP_LT;
+		}
+
+">"		{
+			return OP_GT;
+		}
+
+<<EOF>>		{ return T_EOF ; }
+.		{ printf ("Unexpected character\n"); exit (1); }
 
 
 
