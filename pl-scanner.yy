@@ -25,7 +25,7 @@ YY_DECL;
 DIGIT [0-9] 
 ALPHA [a-zA-Z]
 ID [a-z][0-9][A-Z]
-TESTCAP [A-Z][A-Z0-9]
+TESTCAP ^([_a-zA-Z]+)[_a-zA-Z0-9]+
 
 %%
 
