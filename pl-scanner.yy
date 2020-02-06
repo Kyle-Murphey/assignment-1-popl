@@ -24,7 +24,7 @@ YY_DECL;
 
 DIGIT [0-9] 
 ALPHA [a-zA-Z]
-ID [a-z][a-zA-z0-9]
+ID [a-z][0-9][A-Z]
 
 %%
 
