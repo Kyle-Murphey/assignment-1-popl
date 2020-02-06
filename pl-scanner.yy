@@ -65,7 +65,7 @@ TESTCAP [A-Z][A-Z0-9]
 
 {TESTCAP}
 		{
-			return 'k'
+			return 'k';
 		}
 
 "+"		{
