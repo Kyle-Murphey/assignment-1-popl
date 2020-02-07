@@ -24,8 +24,8 @@ YY_DECL;
 
 DIGIT [0-9] 
 ALPHA [a-zA-Z]
-ID [a-z][0-9][A-Z]
-TESTCAP ^([_a-zA-Z]+)[_a-zA-Z0-9]+
+UOP ^[_][_0-9]*[a-zA-Z]+[_a-zA-Z0-9]*
+OP ^[a-zA-Z][_a-zA-Z0-9]+
 
 %%
 
@@ -55,17 +55,12 @@ TESTCAP ^([_a-zA-Z]+)[_a-zA-Z0-9]+
 			return L_INTEGER;
 		}
 
-{ALPHA}+        { 
+{UOP}	 	{ 
 			return T_ID;
 		}
 
-{ID}		{
-			return OP_ASSIGN;
-		}
-
-{TESTCAP}
-		{
-			return 'k';
+{OP}		{
+			return T_ID;
 		}
 
 "+"		{
