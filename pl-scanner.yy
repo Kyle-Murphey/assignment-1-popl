@@ -52,6 +52,50 @@ FLOAT ^[-+0-9]*[0-9]+\.[0-9]+
 			return K_MAIN; 
                 }
 
+"integer"	{
+			return K_INTEGER;
+		}
+
+"float"		{
+			return K_FLOAT;
+		}
+
+"foreach"	{
+			return K_FOREACH;
+		}
+
+"begin"		{
+			return K_BEGIN;
+		}
+
+"end"		{
+			return K_END;
+		}
+
+"repeat"	{
+			return K_REPEAT;
+		}
+
+"until"		{
+			return K_UNTIL;
+		}
+
+"while"		{
+			return K_WHILE;
+		}
+
+"declare"	{
+			return K_DECLARE;
+		}
+
+"if"		{
+			return K_IF;
+		}
+
+"then"		{
+			return K_THEN;
+		}
+
 {FLOAT}		{
 			return L_FLOAT;
 		}
