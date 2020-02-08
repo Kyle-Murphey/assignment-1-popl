@@ -26,6 +26,7 @@ DIGIT [0-9]
 ALPHA [a-zA-Z]
 UOP ^[_][_0-9]*[a-zA-Z]+[_a-zA-Z0-9]*
 OP ^[a-zA-Z][_a-zA-Z0-9]+
+FLOAT ^[-+0-9]*[0-9]+\.[0-9]+
 
 %%
 
@@ -50,6 +51,10 @@ OP ^[a-zA-Z][_a-zA-Z0-9]+
 "main"		{ 
 			return K_MAIN; 
                 }
+
+{FLOAT}		{
+			return L_FLOAT;
+		}
 
 {DIGIT}+	{ 
 			return L_INTEGER;
